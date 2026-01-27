@@ -191,9 +191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SCR_PlayerMovement
   moveSpeed: 7
   groundDrag: 5
-  jumpForce: 12
+  jumpForce: 13
   jumpCooldown: 0.25
-  airMultiplier: 0.4
+  airMultiplier: 0.1
   jumpKey: 32
   maskKey: 102
   interactKey: 101
@@ -202,6 +202,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 39140634002709396}
+  effect: {fileID: 3453646089739245156, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
   day: 0
   skyLight: {fileID: 0}
   dayColour: {r: 0, g: 0, b: 0, a: 0}
