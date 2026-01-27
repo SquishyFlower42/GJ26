@@ -23,6 +23,7 @@ public class SCR_PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
     public Transform orientation;
+    public GameObject effect;
 
     [Header("Light")]
     public bool day;
@@ -137,6 +138,7 @@ public class SCR_PlayerMovement : MonoBehaviour
             foreach (var item in nightOnly)
             {
                 item.SetActive(true);
+                Instantiate(effect, item.transform);
             }
             foreach (var item in dayOnly)
             {
