@@ -158,7 +158,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4789064395567952888}
   serializedVersion: 5
-  m_Mass: 1.5
+  m_Mass: 2
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -195,11 +195,19 @@ MonoBehaviour:
   jumpCooldown: 0.25
   airMultiplier: 0.4
   jumpKey: 32
+  maskKey: 102
+  interactKey: 101
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 39140634002709396}
+  day: 0
+  skyLight: {fileID: 0}
+  dayColour: {r: 0, g: 0, b: 0, a: 0}
+  nightColour: {r: 0, g: 0, b: 0, a: 0}
+  dayOnly: []
+  nightOnly: []
 --- !u!1 &7665177850597235044
 GameObject:
   m_ObjectHideFlags: 0
