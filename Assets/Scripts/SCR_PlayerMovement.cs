@@ -38,11 +38,15 @@ public class SCR_PlayerMovement : MonoBehaviour
     public GameObject[] dayOnly;
     public GameObject[] nightOnly;
     public List<GameObject> activeEffects;
+
+    [Header("Sounds")]
+    public AudioSource soundSource;
+    public AudioClip ticks;
+
+
     float hInput;
     float vInput;
-
     Vector3 moveDir;
-
     Rigidbody rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -145,14 +149,15 @@ public class SCR_PlayerMovement : MonoBehaviour
             day = false;
             skyLight.color = nightColour;
             
-            foreach (var item in nightOnly)
-            {
-                item.SetActive(true);
-            }
+            
             foreach (var item in dayOnly)
             {
                 activeEffects.Add(Instantiate(dayOnlyEffect, item.transform.position, Quaternion.Euler(-90, 0, 0)));
                 item.SetActive(false);
+            }
+            foreach (var item in nightOnly)
+            {
+                item.SetActive(true);
             }
         }
 
