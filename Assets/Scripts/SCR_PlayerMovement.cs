@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
@@ -23,7 +25,8 @@ public class SCR_PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
     public Transform orientation;
-    public GameObject effect;
+    public GameObject nightOnlyEffect;
+    public GameObject dayOnlyEffect;
 
     [Header("Light")]
     public bool day;
@@ -34,7 +37,7 @@ public class SCR_PlayerMovement : MonoBehaviour
     [Header("Object Arrays")]
     public GameObject[] dayOnly;
     public GameObject[] nightOnly;
-
+    public List<GameObject> activeEffects;
     float hInput;
     float vInput;
 
@@ -130,6 +133,13 @@ public class SCR_PlayerMovement : MonoBehaviour
 
     private void MaskSwap()
     {
+        int count = activeEffects.Count;
+        for (int i = 0; i < count; i++)
+        {
+            Destroy(activeEffects[i]);
+        }
+        activeEffects.Clear();
+
         if (day)
         {
             day = false;
@@ -138,10 +148,10 @@ public class SCR_PlayerMovement : MonoBehaviour
             foreach (var item in nightOnly)
             {
                 item.SetActive(true);
-                Instantiate(effect, item.transform);
             }
             foreach (var item in dayOnly)
             {
+                activeEffects.Add(Instantiate(dayOnlyEffect, item.transform.position, Quaternion.Euler(-90, 0, 0)));
                 item.SetActive(false);
             }
         }
@@ -152,6 +162,7 @@ public class SCR_PlayerMovement : MonoBehaviour
             skyLight.color = dayColour;
             foreach (var item in nightOnly)
             {
+                activeEffects.Add(Instantiate(nightOnlyEffect, item.transform.position, Quaternion.Euler(-90, 0, 0)));
                 item.SetActive(false);
             }
             foreach (var item in dayOnly)

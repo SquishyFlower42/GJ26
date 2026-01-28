@@ -1124,18 +1124,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 529892349}
     - target: {fileID: 7941496416847730799, guid: 9c7886f873bb6e940a264f86a1e63be7, type: 3}
-      propertyPath: dayColour.b
-      value: 0.23113209
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941496416847730799, guid: 9c7886f873bb6e940a264f86a1e63be7, type: 3}
-      propertyPath: dayColour.g
-      value: 0.83806676
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941496416847730799, guid: 9c7886f873bb6e940a264f86a1e63be7, type: 3}
-      propertyPath: dayColour.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941496416847730799, guid: 9c7886f873bb6e940a264f86a1e63be7, type: 3}
       propertyPath: daycolour.b
       value: 0.8392157
       objectReference: {fileID: 0}
@@ -1158,18 +1146,6 @@ PrefabInstance:
     - target: {fileID: 7941496416847730799, guid: 9c7886f873bb6e940a264f86a1e63be7, type: 3}
       propertyPath: nightLight.r
       value: 0.08940016
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941496416847730799, guid: 9c7886f873bb6e940a264f86a1e63be7, type: 3}
-      propertyPath: nightColour.b
-      value: 0.5471698
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941496416847730799, guid: 9c7886f873bb6e940a264f86a1e63be7, type: 3}
-      propertyPath: nightColour.g
-      value: 0.013791097
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941496416847730799, guid: 9c7886f873bb6e940a264f86a1e63be7, type: 3}
-      propertyPath: nightColour.r
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8360628271310737708, guid: 9c7886f873bb6e940a264f86a1e63be7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1273,63 +1249,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28a5090c09bf66b43982815429b65c0e, type: 3}
---- !u!1001 &7903545583819243949
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1418457736421756474, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418457736421756474, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418457736421756474, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418457736421756474, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418457736421756474, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418457736421756474, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418457736421756474, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418457736421756474, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418457736421756474, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418457736421756474, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3453646089739245156, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
-      propertyPath: m_Name
-      value: Particle System
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1347,4 +1266,3 @@ SceneRoots:
   - {fileID: 941835699}
   - {fileID: 777428057}
   - {fileID: 455066476}
-  - {fileID: 7903545583819243949}
