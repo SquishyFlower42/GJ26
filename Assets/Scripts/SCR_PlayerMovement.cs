@@ -25,8 +25,15 @@ public class SCR_PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
     public Transform orientation;
+
+
+    [Header("Objects")]
     public GameObject nightOnlyEffect;
     public GameObject dayOnlyEffect;
+    public List<GameObject> activeEffects;
+    public GameObject[] lights;
+    public GameObject[] dayOnly;
+    public GameObject[] nightOnly;
 
     [Header("Light")]
     public bool day;
@@ -34,10 +41,9 @@ public class SCR_PlayerMovement : MonoBehaviour
     public Color dayColour;
     public Color nightColour;
 
-    [Header("Object Arrays")]
-    public GameObject[] dayOnly;
-    public GameObject[] nightOnly;
-    public List<GameObject> activeEffects;
+    [Header("Materials")]
+    public Material daySky;
+    public Material nightSky;
 
     [Header("Sounds")]
     public AudioSource soundSource;
@@ -137,6 +143,8 @@ public class SCR_PlayerMovement : MonoBehaviour
 
     private void MaskSwap()
     {
+        soundSource.Play();
+
         int count = activeEffects.Count;
         for (int i = 0; i < count; i++)
         {
@@ -148,8 +156,13 @@ public class SCR_PlayerMovement : MonoBehaviour
         {
             day = false;
             skyLight.color = nightColour;
-            
-            
+            UnityEngine.RenderSettings.skybox = nightSky;
+
+            foreach (var light in lights)
+            {
+                light.GetComponent<Light>().color = nightColour;
+                light.GetComponent<Light>().intensity = 50;
+            }
             foreach (var item in dayOnly)
             {
                 activeEffects.Add(Instantiate(dayOnlyEffect, item.transform.position, Quaternion.Euler(-90, 0, 0)));
@@ -165,6 +178,13 @@ public class SCR_PlayerMovement : MonoBehaviour
         {
             day = true;
             skyLight.color = dayColour;
+            UnityEngine.RenderSettings.skybox = daySky;
+
+            foreach (var light in lights)
+            {
+                light.GetComponent<Light>().color = dayColour;
+                light.GetComponent<Light>().intensity = 10;
+            }
             foreach (var item in nightOnly)
             {
                 activeEffects.Add(Instantiate(nightOnlyEffect, item.transform.position, Quaternion.Euler(-90, 0, 0)));
