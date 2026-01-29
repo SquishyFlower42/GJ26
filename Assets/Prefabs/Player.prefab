@@ -198,18 +198,23 @@ MonoBehaviour:
   jumpKey: 32
   maskKey: 102
   interactKey: 101
+  mask: 0
+  cellLockpick: 0
+  guardroomKey: 0
+  exitKey: 0
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 39140634002709396}
+  interaction: 0
   nightOnlyEffect: {fileID: 3453646089739245156, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
   dayOnlyEffect: {fileID: 3453646089739245156, guid: 1cc680da069cf0d459f306df6ab1659e, type: 3}
   activeEffects: []
   lights: []
   dayOnly: []
   nightOnly: []
-  interactable: {fileID: 0}
+  interactText: {fileID: 0}
   day: 0
   skyLight: {fileID: 0}
   dayColour: {r: 1, g: 0.83806676, b: 0.23113209, a: 0}

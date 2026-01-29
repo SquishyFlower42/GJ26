@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
@@ -20,11 +21,18 @@ public class SCR_PlayerMovement : MonoBehaviour
     public KeyCode maskKey = KeyCode.F;
     public KeyCode interactKey = KeyCode.E;
 
+    [Header("Pickup Objects")]
+    public bool mask = false;
+    public bool cellLockpick = false;
+    public bool guardroomKey = false;
+    public bool exitKey = false;
+
     [Header("Other")]
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
     public Transform orientation;
+    public bool interaction;
 
 
     [Header("Objects")]
@@ -34,7 +42,7 @@ public class SCR_PlayerMovement : MonoBehaviour
     public GameObject[] lights;
     public GameObject[] dayOnly;
     public GameObject[] nightOnly;
-    public GameObject interactable;
+    public GameObject interactText;
 
     [Header("Light")]
     public bool day;
@@ -65,6 +73,11 @@ public class SCR_PlayerMovement : MonoBehaviour
         nightOnly = GameObject.FindGameObjectsWithTag("NightOnly");
         ResetJump();
         MaskSwap();
+
+        mask = false;
+        cellLockpick = false;
+        guardroomKey = false;
+        exitKey = false;
     }
 
     // Update is called once per frame
@@ -105,14 +118,9 @@ public class SCR_PlayerMovement : MonoBehaviour
             Invoke(nameof(ResetJump), jumpCooldown);
         }
 
-        if (Input.GetKeyDown(maskKey))
+        if (Input.GetKeyDown(maskKey) && mask)
         {
             MaskSwap();
-        }
-
-        if (Input.GetKeyDown(interactKey) && interactable != null)
-        {
-            Interact(interactable);
         }
     }
 
@@ -149,7 +157,7 @@ public class SCR_PlayerMovement : MonoBehaviour
 
     private void MaskSwap()
     {
-        //soundSource.Play();
+        soundSource.Play();
 
         int count = activeEffects.Count;
         for (int i = 0; i < count; i++)
@@ -201,10 +209,5 @@ public class SCR_PlayerMovement : MonoBehaviour
                 item.SetActive(true);
             }
         }
-    }
-
-    private void Interact(GameObject obj)
-    {
-
     }
 }

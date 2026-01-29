@@ -75,8 +75,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f487ba99881ea469baabd4275ed441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SCR_Container
-  interactDist: {fileID: 0}
-  player: {fileID: 0}
+  interactText: {fileID: 0}
+  player: {fileID: 7941496416847730799, guid: 9c7886f873bb6e940a264f86a1e63be7, type: 3}
+  lid: {fileID: 7299489422369987544}
+  moveSpeed: 2
 --- !u!1001 &6490916255113787217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -169,5 +171,10 @@ SphereCollider:
 --- !u!4 &6746080585726349498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a3d529a1b2652c142a2d685b41ab1a27, type: 3}
+  m_PrefabInstance: {fileID: 6490916255113787217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7299489422369987544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4564577464659487881, guid: a3d529a1b2652c142a2d685b41ab1a27, type: 3}
   m_PrefabInstance: {fileID: 6490916255113787217}
   m_PrefabAsset: {fileID: 0}
