@@ -34,6 +34,7 @@ public class SCR_PlayerMovement : MonoBehaviour
     public GameObject[] lights;
     public GameObject[] dayOnly;
     public GameObject[] nightOnly;
+    public GameObject interactable;
 
     [Header("Light")]
     public bool day;
@@ -108,6 +109,11 @@ public class SCR_PlayerMovement : MonoBehaviour
         {
             MaskSwap();
         }
+
+        if (Input.GetKeyDown(interactKey) && interactable != null)
+        {
+            Interact(interactable);
+        }
     }
 
     private void MovePlayer()
@@ -143,7 +149,7 @@ public class SCR_PlayerMovement : MonoBehaviour
 
     private void MaskSwap()
     {
-        soundSource.Play();
+        //soundSource.Play();
 
         int count = activeEffects.Count;
         for (int i = 0; i < count; i++)
@@ -195,5 +201,10 @@ public class SCR_PlayerMovement : MonoBehaviour
                 item.SetActive(true);
             }
         }
+    }
+
+    private void Interact(GameObject obj)
+    {
+
     }
 }

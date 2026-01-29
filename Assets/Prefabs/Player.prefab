@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 978360393581954945}
   m_Layer: 0
   m_Name: PlayerObj
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 7163827357754968822}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,11 +203,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 39140634002709396}
-  dayOnly: []
-  nightOnly: []
-  activeEffects: []
   nightOnlyEffect: {fileID: 3453646089739245156, guid: e798bef6f6b756044873d5b952faa2bf, type: 3}
   dayOnlyEffect: {fileID: 3453646089739245156, guid: 1cc680da069cf0d459f306df6ab1659e, type: 3}
+  activeEffects: []
+  lights: []
+  dayOnly: []
+  nightOnly: []
+  interactable: {fileID: 0}
   day: 0
   skyLight: {fileID: 0}
   dayColour: {r: 1, g: 0.83806676, b: 0.23113209, a: 0}
