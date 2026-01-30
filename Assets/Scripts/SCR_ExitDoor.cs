@@ -7,6 +7,8 @@ public class SCR_ExitDoor : MonoBehaviour
     private bool interactable;
     private bool inRange;
 
+    public AudioSource sound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +21,7 @@ public class SCR_ExitDoor : MonoBehaviour
     {
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
+            sound.Play();
             SceneManager.LoadScene(3);
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;

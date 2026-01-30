@@ -21,6 +21,7 @@ public class SCR_ExitDoorKey : MonoBehaviour
     {
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
+            interactText.SetActive(false);
             player.exitKey = true;
             exitKeyIcon.SetActive(true);
             Destroy(parent);

@@ -21,6 +21,7 @@ public class SCR_GuardDoorKey : MonoBehaviour
     {
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
+            interactText.SetActive(false);
             player.guardroomKey = true;
             guardKeyIcon.SetActive(true);
             Destroy(parent);

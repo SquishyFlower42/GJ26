@@ -7,10 +7,13 @@ public class SCR_GuardRoomDoor : MonoBehaviour
     public SCR_PlayerMovement player;
     public GameObject guardDoor;
     public Vector3 moveTowards;
+    public Vector3 moveMiddle;
     public Vector3 moveEnd;
     public float moveSpeed = 0.3f;
     private bool interactable;
     private bool inRange;
+
+    public AudioSource sound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,14 +28,20 @@ public class SCR_GuardRoomDoor : MonoBehaviour
     {
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
+            sound.Play();
             interactable = false;
             interactText.SetActive(false);
-            moveTowards = moveEnd;
+            moveTowards = moveMiddle;
         }
 
         if (guardDoor.transform.position != moveTowards)
         {
             guardDoor.transform.position = Vector3.MoveTowards(guardDoor.transform.position, moveTowards, Vector3.Distance(guardDoor.transform.position, moveTowards) * moveSpeed * Time.deltaTime);
+        }
+
+        if (guardDoor.transform.position.z >= moveMiddle.z - 0.05f)
+        {
+            moveTowards = moveEnd;
         }
     }
 

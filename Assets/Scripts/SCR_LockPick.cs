@@ -21,6 +21,7 @@ public class SCR_LockPick : MonoBehaviour
     {
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
+            interactText.SetActive(false);
             player.cellLockpick = true;
             lockPickIcon.SetActive(true);
             Destroy(parent);
