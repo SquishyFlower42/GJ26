@@ -9,6 +9,7 @@ public class SCR_Container : MonoBehaviour
     public SCR_PlayerMovement player;
     public GameObject lid;
     private bool interactable;
+    private bool inRange;
 
     private Vector3 moveEnd;
     private Vector3 moveStart;
@@ -19,6 +20,7 @@ public class SCR_Container : MonoBehaviour
     void Start()
     {
         interactable = true;
+        inRange = false;
         moveStart = lid.transform.position;
         moveTowards = moveStart;
         moveEnd = lid.transform.position;
@@ -28,7 +30,7 @@ public class SCR_Container : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(player.interactKey) && interactable)
+        if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
             interactable = false;
             moveTowards = moveEnd;
@@ -53,6 +55,7 @@ public class SCR_Container : MonoBehaviour
         if (other.CompareTag("Player") && interactable)
         {
             interactText.SetActive(true);
+            inRange = true;
         }
     }
 
@@ -61,6 +64,7 @@ public class SCR_Container : MonoBehaviour
         if (other.CompareTag("Player") && interactable)
         {
             interactText.SetActive(false);
+            inRange = false;
         }
     }
 }
