@@ -5,11 +5,13 @@ public class SCR_InteractBase : MonoBehaviour
     public GameObject interactText;
     public SCR_PlayerMovement player;
     private bool interactable;
+    private bool inRange;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         interactable = true;
+        inRange = false;
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class SCR_InteractBase : MonoBehaviour
         if (other.CompareTag("Player") && interactable)
         {
             interactText.SetActive(true);
+            inRange = true;
         }
     }
 
@@ -35,6 +38,7 @@ public class SCR_InteractBase : MonoBehaviour
         if (other.CompareTag("Player") && interactable)
         {
             interactText.SetActive(false);
+            inRange = false;
         }
     }
 }
