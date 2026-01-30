@@ -2,12 +2,14 @@ using System.Collections;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SCR_Container : MonoBehaviour
 {
     public GameObject interactText;
     public SCR_PlayerMovement player;
     public GameObject lid;
+    public GameObject maskIcon;
     private bool interactable;
     private bool inRange;
 
@@ -36,6 +38,11 @@ public class SCR_Container : MonoBehaviour
             moveTowards = moveEnd;
             interactText.SetActive(false);
             player.mask = true;
+            maskIcon.SetActive(true);
+            foreach (var effect in player.activeEffects)
+            {
+                effect.gameObject.SetActive(true);
+            }
         }
 
         if (lid.transform.position != moveTowards)

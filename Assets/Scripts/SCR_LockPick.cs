@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public class SCR_InteractBase : MonoBehaviour
+public class SCR_LockPick : MonoBehaviour
 {
     public GameObject interactText;
     public SCR_PlayerMovement player;
+    public GameObject lockPickIcon;
+    public GameObject parent;
     private bool interactable;
     private bool inRange;
 
@@ -19,14 +21,16 @@ public class SCR_InteractBase : MonoBehaviour
     {
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
-
+            player.cellLockpick = true;
+            lockPickIcon.SetActive(true);
+            Destroy(parent);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Player") && interactable)
+        if (other.CompareTag("Player") && interactable && !player.day)
         {
             interactText.SetActive(true);
             inRange = true;
