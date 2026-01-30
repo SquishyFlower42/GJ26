@@ -26,6 +26,7 @@ public class SCR_PlayerMovement : MonoBehaviour
     public bool cellLockpick = false;
     public bool guardroomKey = false;
     public bool exitKey = false;
+   
 
     [Header("Other")]
     public float playerHeight;
@@ -58,11 +59,13 @@ public class SCR_PlayerMovement : MonoBehaviour
     public AudioSource soundSource;
     public AudioClip ticks;
 
+    public bool lockOpened = false;
 
     float hInput;
     float vInput;
     Vector3 moveDir;
     Rigidbody rb;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

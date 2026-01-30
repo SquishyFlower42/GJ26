@@ -7,6 +7,7 @@ public class SCR_InteractBase : MonoBehaviour
     private bool interactable;
     private bool inRange;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

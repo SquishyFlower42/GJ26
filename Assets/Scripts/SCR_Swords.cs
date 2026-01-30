@@ -3,11 +3,6 @@ using UnityEngine;
 public class SCR_Swords : MonoBehaviour
 {
 
-    public GameObject swordOne;
-    public GameObject swordTwo;
-    public GameObject swordThree;
-    public GameObject swordFour;
-    
     public GameObject[] swordCorrectPositions;
 
     public GameObject posOne;
@@ -17,19 +12,59 @@ public class SCR_Swords : MonoBehaviour
 
     public SCR_SwapSword[] swapSword;
     
-    
-    public bool interactable = true;
 
     public int correctCount = 0;
-    public string swordPositions;
-    public string solution;
+
+
+    public Camera playerCam;
+    public Camera puzzleCam;
 
     public GameObject swordCanvas;
 
+    public GameObject interactText;
+    public SCR_PlayerMovement player;
+    private bool interactable;
+    private bool inRange;
 
 
+    public SCR_NoteManager noteManager;
 
+    public int firstNote;
+    public int secondNote;
 
+    void Start()
+    {
+        interactable = true;
+        inRange = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
+        {
+            PuzzleBegin();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Player") && interactable)
+        {
+            interactText.SetActive(true);
+            inRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player") && interactable)
+        {
+            interactText.SetActive(false);
+            inRange = false;
+        }
+    }
 
     public void CheckSolution()
     {
@@ -62,6 +97,11 @@ public class SCR_Swords : MonoBehaviour
     {
         if (interactable)
         {
+            interactText.SetActive(false);
+            puzzleCam.enabled = true;
+            playerCam.enabled = false;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
             swordCanvas.SetActive(true);
         }
         
@@ -70,6 +110,12 @@ public class SCR_Swords : MonoBehaviour
 
     public void PuzzleStop()
     {
+        interactText.SetActive(false);
+        puzzleCam.enabled = false;
+        playerCam.enabled = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         swordCanvas.SetActive(false);
 
@@ -78,9 +124,20 @@ public class SCR_Swords : MonoBehaviour
     public void PuzzleWin()
     {
 
-        //Drawer opens and key is found. A noise is made to alert the player of where the key is!
+        noteManager.notes[5].SetActive(true);
+        noteManager.notes[6].SetActive(true);
+        noteManager.notes[4].SetActive(true);
+        noteManager.notes[3].SetActive(true);
+
+        interactText.SetActive(false);
+        puzzleCam.enabled = false;
+        playerCam.enabled = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         interactable = false;
-        PuzzleStop();
+        swordCanvas.SetActive(false);
 
 
     }

@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class SCR_ExitDoor : MonoBehaviour
 {
     public GameObject interactText;
@@ -19,8 +19,9 @@ public class SCR_ExitDoor : MonoBehaviour
     {
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
-            //Roll credits
-            //Win screen
+            SceneManager.LoadScene(3);
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
             print("Yay, you won!");
         }
     }

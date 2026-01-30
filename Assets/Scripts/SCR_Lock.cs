@@ -3,7 +3,6 @@ using UnityEngine.UI;
 public class SCR_Lock : MonoBehaviour
 {
 
-    public bool interactable = true;
     public GameObject lockCanvas;
     public Text[] lockText;
 
@@ -12,11 +11,49 @@ public class SCR_Lock : MonoBehaviour
     public int[] lockCharacterNumber;
     private string insertedPassword;
 
+    public GameObject interactText;
+    public SCR_PlayerMovement player;
+    private bool interactable;
+    private bool inRange;
 
+    public Camera playerCam;
+    public Camera puzzleCam;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         lockCharacterNumber = new int[password.Length];
         UpdateUI();
+        interactable = true;
+        inRange = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(player.interactKey) && interactable && inRange && player.guardroomKey)
+        {
+            StartDecoding();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Player") && interactable)
+        {
+            interactText.SetActive(true);
+            inRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player") && interactable)
+        {
+            interactText.SetActive(false);
+            inRange = false;
+        }
     }
 
     public void IncreaseInsertedPassword(int number)
@@ -62,9 +99,11 @@ public class SCR_Lock : MonoBehaviour
 
     public void Unlock()
     {
+
+        player.lockOpened = true;
         interactable = false;
         StopDecoding();
-        gameObject.SetActive(false);
+
     }
 
     public void UpdateUI()
@@ -78,12 +117,28 @@ public class SCR_Lock : MonoBehaviour
 
     public void StartDecoding()
     {
+
         if (interactable)
+        {
+            interactText.SetActive(false);
+            puzzleCam.enabled = true;
+            playerCam.enabled = false;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
             lockCanvas.SetActive(true);
+        }
+
     }
 
     public void StopDecoding()
     {
+        interactText.SetActive(false);
+        puzzleCam.enabled = false;
+        playerCam.enabled = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         lockCanvas.SetActive(false);
     }
 
