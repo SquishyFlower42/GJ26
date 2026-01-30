@@ -10,6 +10,8 @@ public class SCR_Container : MonoBehaviour
     public SCR_PlayerMovement player;
     public GameObject lid;
     public GameObject maskIcon;
+    public AudioSource audioOpen;
+    public AudioSource audioClose;
     private bool interactable;
     private bool inRange;
 
@@ -34,6 +36,7 @@ public class SCR_Container : MonoBehaviour
     {
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
+            audioOpen.Play();
             interactable = false;
             moveTowards = moveEnd;
             interactText.SetActive(false);
@@ -52,6 +55,7 @@ public class SCR_Container : MonoBehaviour
 
         if (lid.transform.position == moveEnd)
         {
+            audioClose.Play();
             moveTowards = moveStart;
         }
     }
