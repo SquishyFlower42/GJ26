@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public class SCR_InteractBase : MonoBehaviour
+public class SCR_ExitDoorKey : MonoBehaviour
 {
     public GameObject interactText;
     public SCR_PlayerMovement player;
+    public GameObject exitKeyIcon;
+    public GameObject parent;
     private bool interactable;
     private bool inRange;
 
@@ -19,7 +21,9 @@ public class SCR_InteractBase : MonoBehaviour
     {
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
-
+            player.exitKey = true;
+            exitKeyIcon.SetActive(true);
+            Destroy(parent);
         }
     }
 

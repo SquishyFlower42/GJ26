@@ -73,6 +73,10 @@ public class SCR_PlayerMovement : MonoBehaviour
         nightOnly = GameObject.FindGameObjectsWithTag("NightOnly");
         ResetJump();
         MaskSwap();
+        foreach (var effect in activeEffects)
+        {
+            effect.gameObject.SetActive(false);
+        }
 
         mask = false;
         cellLockpick = false;

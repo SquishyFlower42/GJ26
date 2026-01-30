@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SCR_InteractBase : MonoBehaviour
+public class SCR_ExitDoor : MonoBehaviour
 {
     public GameObject interactText;
     public SCR_PlayerMovement player;
@@ -19,14 +19,16 @@ public class SCR_InteractBase : MonoBehaviour
     {
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
-
+            //Roll credits
+            //Win screen
+            print("Yay, you won!");
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Player") && interactable)
+        if (other.CompareTag("Player") && interactable && player.exitKey)
         {
             interactText.SetActive(true);
             inRange = true;
