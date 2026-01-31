@@ -31,7 +31,7 @@ public class SCR_Lock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(player.interactKey) && interactable && inRange && player.guardroomKey)
+        if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
             StartDecoding();
         }

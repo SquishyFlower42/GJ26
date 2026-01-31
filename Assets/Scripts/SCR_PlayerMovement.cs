@@ -54,6 +54,9 @@ public class SCR_PlayerMovement : MonoBehaviour
     [Header("Materials")]
     public Material daySky;
     public Material nightSky;
+    public Color active;
+    public Color notActive;
+    public Color blueTint;
 
     [Header("Sounds")]
     public AudioSource soundSource;
