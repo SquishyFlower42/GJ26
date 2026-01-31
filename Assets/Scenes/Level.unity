@@ -1159,6 +1159,7 @@ MonoBehaviour:
   closedChest: {fileID: 49636817}
   openChest: {fileID: 659732974}
   exitKey: {fileID: 8124737297573290755}
+  objOrder: {fileID: 8439683271175972572}
 --- !u!135 &234333102
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10432,6 +10433,7 @@ MonoBehaviour:
   player: {fileID: 775094866}
   playerCam: {fileID: 477542652}
   puzzleCam: {fileID: 620322677}
+  objCombination: {fileID: 8439683271175972573}
 --- !u!64 &1572267265
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14849,6 +14851,10 @@ PrefabInstance:
       value: 0.149
       objectReference: {fileID: 0}
     - target: {fileID: 6746418512339434530, guid: b107a64a5922add48949aab4c5cc41cd, type: 3}
+      propertyPath: gtfo
+      value: 
+      objectReference: {fileID: 8439683271175972574}
+    - target: {fileID: 6746418512339434530, guid: b107a64a5922add48949aab4c5cc41cd, type: 3}
       propertyPath: parent
       value: 
       objectReference: {fileID: 8124737297573290755}
@@ -15112,6 +15118,31 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcfc92d57b79c9a4fb9fb7b09dc443c6, type: 3}
+--- !u!1 &8439683271175972572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1407555991367247134, guid: bcfc92d57b79c9a4fb9fb7b09dc443c6, type: 3}
+  m_PrefabInstance: {fileID: 8439683271175972571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8439683271175972573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6263107064665007573, guid: bcfc92d57b79c9a4fb9fb7b09dc443c6, type: 3}
+  m_PrefabInstance: {fileID: 8439683271175972571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8439683271175972574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 88720383833785216, guid: bcfc92d57b79c9a4fb9fb7b09dc443c6, type: 3}
+  m_PrefabInstance: {fileID: 8439683271175972571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8439683271175972575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 636311744806673197, guid: bcfc92d57b79c9a4fb9fb7b09dc443c6, type: 3}
+  m_PrefabInstance: {fileID: 8439683271175972571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8439683271175972576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5902189593026918180, guid: bcfc92d57b79c9a4fb9fb7b09dc443c6, type: 3}
+  m_PrefabInstance: {fileID: 8439683271175972571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8782147111155127459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15128,6 +15159,14 @@ PrefabInstance:
       propertyPath: interactText
       value: 
       objectReference: {fileID: 1662158227}
+    - target: {fileID: 5958444536440502001, guid: 2d5b10fbb396d3a45b0d631f90e83208, type: 3}
+      propertyPath: objLeaveCell
+      value: 
+      objectReference: {fileID: 8439683271175972576}
+    - target: {fileID: 5958444536440502001, guid: 2d5b10fbb396d3a45b0d631f90e83208, type: 3}
+      propertyPath: objFindMainKey
+      value: 
+      objectReference: {fileID: 8439683271175972575}
     - target: {fileID: 7370090482219888121, guid: 2d5b10fbb396d3a45b0d631f90e83208, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.05

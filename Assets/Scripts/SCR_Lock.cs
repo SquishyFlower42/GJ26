@@ -19,6 +19,9 @@ public class SCR_Lock : MonoBehaviour
     public Camera playerCam;
     public Camera puzzleCam;
 
+    public GameObject objCombination;
+    private bool firstTime;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +29,7 @@ public class SCR_Lock : MonoBehaviour
         UpdateUI();
         interactable = true;
         inRange = false;
+        firstTime = true;
     }
 
     // Update is called once per frame
@@ -34,6 +38,8 @@ public class SCR_Lock : MonoBehaviour
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
             StartDecoding();
+
+            if (firstTime) { objCombination.SetActive(true); firstTime = false; }
         }
     }
 
@@ -103,6 +109,7 @@ public class SCR_Lock : MonoBehaviour
         player.lockOpened = true;
         interactable = false;
         StopDecoding();
+        objCombination.SetActive(false);
 
     }
 

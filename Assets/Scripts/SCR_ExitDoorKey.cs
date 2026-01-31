@@ -6,6 +6,7 @@ public class SCR_ExitDoorKey : MonoBehaviour
     public SCR_PlayerMovement player;
     public GameObject exitKeyIcon;
     public GameObject parent;
+    public GameObject gtfo;
     private bool interactable;
     private bool inRange;
 
@@ -21,6 +22,7 @@ public class SCR_ExitDoorKey : MonoBehaviour
     {
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
+            gtfo.SetActive(true);
             interactText.SetActive(false);
             player.exitKey = true;
             exitKeyIcon.SetActive(true);

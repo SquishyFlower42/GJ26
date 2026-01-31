@@ -6,6 +6,8 @@ public class SCR_JailDoor : MonoBehaviour
     public GameObject interactText;
     public SCR_PlayerMovement player;
     public GameObject jailDoor;
+    public GameObject objLeaveCell;
+    public GameObject objFindMainKey;
     private bool interactable;
     private bool inRange;
     public Vector3 moveTowards;
@@ -34,6 +36,8 @@ public class SCR_JailDoor : MonoBehaviour
             interactable = false;
             interactText.SetActive(false);
             moveTowards = moveMiddle;
+            objLeaveCell.SetActive(false);
+            objFindMainKey.SetActive(true);
         }
 
         if (jailDoor != null && jailDoor.transform.position != moveTowards)

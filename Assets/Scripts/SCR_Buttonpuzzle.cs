@@ -25,11 +25,15 @@ public class SCR_Buttonpuzzle : MonoBehaviour
     public GameObject openChest;
     public GameObject exitKey;
 
+    public GameObject objOrder;
+    private bool firstTime;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         interactable = true;
         inRange = false;
+        firstTime = true;
     }
 
     // Update is called once per frame
@@ -38,6 +42,7 @@ public class SCR_Buttonpuzzle : MonoBehaviour
         if (Input.GetKeyDown(player.interactKey) && interactable && inRange)
         {
             BeginPuzzle();
+            if(firstTime) { objOrder.SetActive(true); firstTime = false; }
         }
     }
 
@@ -153,6 +158,7 @@ public class SCR_Buttonpuzzle : MonoBehaviour
         openChest.SetActive(true);
         exitKey.SetActive(true);
         GetComponent<AudioSource>().Play();
+        objOrder.SetActive(false); 
     }
 
 
