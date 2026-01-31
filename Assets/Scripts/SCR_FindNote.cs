@@ -55,6 +55,7 @@ public class SCR_FindNote : MonoBehaviour
     public void FindNote()
     {
         interactable = false;
+        interactText.SetActive(false);
         noteManager.notes[noteNumber].SetActive(true);
     }
 

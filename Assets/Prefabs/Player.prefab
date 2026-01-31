@@ -221,6 +221,9 @@ MonoBehaviour:
   nightColour: {r: 0, g: 0.013791097, b: 0.5471698, a: 0}
   daySky: {fileID: 2100000, guid: 3e56423e1fe71f94ea97f5bb2004a7e6, type: 2}
   nightSky: {fileID: 2100000, guid: 493bfb50af5d9424da505ba945c86600, type: 2}
+  active: {r: 1, g: 1, b: 1, a: 0}
+  notActive: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0}
+  blueTint: {r: 0, g: 0.070454866, b: 0.49056602, a: 0}
   soundSource: {fileID: 7163827357754968822}
   ticks: {fileID: 0}
   lockOpened: 0
