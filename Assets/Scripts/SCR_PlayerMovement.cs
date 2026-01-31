@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.UI;
 
 public class SCR_PlayerMovement : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class SCR_PlayerMovement : MonoBehaviour
     public GameObject[] dayOnly;
     public GameObject[] nightOnly;
     public GameObject interactText;
+    public Image[] maskPieces;
 
     [Header("Light")]
     public bool day;
@@ -181,6 +183,9 @@ public class SCR_PlayerMovement : MonoBehaviour
             day = false;
             skyLight.color = nightColour;
             UnityEngine.RenderSettings.skybox = nightSky;
+            maskPieces[0].color = blueTint;
+            maskPieces[1].color = notActive;
+            maskPieces[2].color = active;
 
             foreach (var light in lights)
             {
@@ -203,6 +208,9 @@ public class SCR_PlayerMovement : MonoBehaviour
             day = true;
             skyLight.color = dayColour;
             UnityEngine.RenderSettings.skybox = daySky;
+            maskPieces[0].color = active;
+            maskPieces[1].color = active;
+            maskPieces[2].color = notActive;
 
             foreach (var light in lights)
             {

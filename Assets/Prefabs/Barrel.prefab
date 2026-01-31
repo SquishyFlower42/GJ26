@@ -78,9 +78,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SCR_Container
   interactText: {fileID: 0}
-  player: {fileID: 7941496416847730799, guid: 9c7886f873bb6e940a264f86a1e63be7, type: 3}
+  player: {fileID: 0}
   lid: {fileID: 7299489422369987544}
-  maskIcon: {fileID: 0}
+  maskIcon: []
   audioOpen: {fileID: 4357843816947614531}
   audioClose: {fileID: 5016910834299892893}
   moveSpeed: 2

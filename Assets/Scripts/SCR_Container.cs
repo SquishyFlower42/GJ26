@@ -3,13 +3,14 @@ using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class SCR_Container : MonoBehaviour
 {
     public GameObject interactText;
     public SCR_PlayerMovement player;
     public GameObject lid;
-    public GameObject maskIcon;
+    public GameObject[] maskIcon;
     public AudioSource audioOpen;
     public AudioSource audioClose;
     private bool interactable;
@@ -41,7 +42,10 @@ public class SCR_Container : MonoBehaviour
             moveTowards = moveEnd;
             interactText.SetActive(false);
             player.mask = true;
-            maskIcon.SetActive(true);
+            foreach (var item in maskIcon)
+            {
+                item.SetActive(true);
+            }
             foreach (var effect in player.activeEffects)
             {
                 effect.gameObject.SetActive(true);
