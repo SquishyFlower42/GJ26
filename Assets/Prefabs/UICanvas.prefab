@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 4271843743294280810}
   - component: {fileID: 1740352121139053690}
   m_Layer: 5
-  m_Name: IMG_Objective1.9
+  m_Name: IMG_ObjectiveGTFO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7738469814858867581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -206,12 +206,12 @@ GameObject:
   - component: {fileID: 43425370537865513}
   - component: {fileID: 8092487299942119863}
   m_Layer: 5
-  m_Name: IMG_Objective1.5
+  m_Name: IMG_ObjectiveMainDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6326384687014116697
 RectTransform:
   m_ObjectHideFlags: 0
@@ -286,7 +286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5164794532601681827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -356,12 +356,12 @@ GameObject:
   - component: {fileID: 6403815022328887237}
   - component: {fileID: 7356852418048730553}
   m_Layer: 5
-  m_Name: IMG_Objective2.5
+  m_Name: IMG_ObjectiveButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5888808773356968890
 RectTransform:
   m_ObjectHideFlags: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbc413d36148d364f9a3dcc4865b18bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7882f947771b6cf41aa9e5f32ff51f1e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -436,7 +436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5040540500000745970
 RectTransform:
   m_ObjectHideFlags: 0
@@ -922,7 +922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5510935569154292207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1067,12 +1067,12 @@ GameObject:
   - component: {fileID: 6443890802583067093}
   - component: {fileID: 2876907484923943606}
   m_Layer: 5
-  m_Name: IMG_Objective
+  m_Name: IMG_ObjectiveCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5100992395886161656
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1147,7 +1147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7450028822090681260
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1217,12 +1217,12 @@ GameObject:
   - component: {fileID: 820542285311757352}
   - component: {fileID: 682721458382069176}
   m_Layer: 5
-  m_Name: IMG_Objective2
+  m_Name: IMG_ObjectiveNumbers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2220024125298275909
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1297,7 +1297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2486998484379699486
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1367,12 +1367,12 @@ GameObject:
   - component: {fileID: 5010113483971123294}
   - component: {fileID: 3981082269213793565}
   m_Layer: 5
-  m_Name: IMG_Note
+  m_Name: IMG_NoteIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3128747928357472321
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1447,7 +1447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &732519341136954421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1522,7 +1522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5252699724043859136
 RectTransform:
   m_ObjectHideFlags: 0
