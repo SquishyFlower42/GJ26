@@ -46,6 +46,8 @@ public class SCR_PlayerMovement : MonoBehaviour
     public GameObject[] nightOnly;
     public GameObject interactText;
     public Image[] maskPieces;
+    public GameObject objCell;
+    public GameObject story;
 
     [Header("Light")]
     public bool day;
@@ -65,6 +67,7 @@ public class SCR_PlayerMovement : MonoBehaviour
     public AudioClip ticks;
 
     public bool lockOpened = false;
+    public bool allowedToMove = false;
 
     float hInput;
     float vInput;
@@ -81,6 +84,8 @@ public class SCR_PlayerMovement : MonoBehaviour
         nightOnly = GameObject.FindGameObjectsWithTag("NightOnly");
         ResetJump();
         MaskSwap();
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
         foreach (var effect in activeEffects)
         {
             effect.gameObject.SetActive(false);
@@ -113,7 +118,10 @@ public class SCR_PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (allowedToMove)
+        {
+            MovePlayer();
+        }
     }
 
     private void KeyboardInput()
@@ -138,6 +146,7 @@ public class SCR_PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
+        
         moveDir = orientation.forward * vInput + orientation.right * hInput;
 
         if (grounded) { rb.AddForce(moveDir.normalized * moveSpeed * 10f, ForceMode.Force); }
@@ -227,5 +236,14 @@ public class SCR_PlayerMovement : MonoBehaviour
                 item.SetActive(true);
             }
         }
+    }
+
+    public void StartGame()
+    {
+        story.SetActive(false);
+        objCell.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        allowedToMove = true;
     }
 }
