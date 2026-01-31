@@ -11,6 +11,9 @@ public class SCR_FindNote : MonoBehaviour
 
     public GameObject self;
 
+    public GameObject noteUI;
+    public GameObject noteKeybindUI;
+
     public GameObject interactText;
     public SCR_PlayerMovement player;
     private bool interactable;
@@ -57,6 +60,8 @@ public class SCR_FindNote : MonoBehaviour
         interactable = false;
         interactText.SetActive(false);
         noteManager.notes[noteNumber].SetActive(true);
+        noteKeybindUI.SetActive(true);
+        noteUI.SetActive(true);
     }
 
 }

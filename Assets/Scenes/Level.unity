@@ -2536,6 +2536,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 552904705}
   m_SourcePrefab: {fileID: 100100000, guid: 80e5ddc462f3c9146bd4802debf99da7, type: 3}
+--- !u!1 &399666887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6817565751296156566, guid: bcfc92d57b79c9a4fb9fb7b09dc443c6, type: 3}
+  m_PrefabInstance: {fileID: 8439683271175972571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &427273019
 GameObject:
   m_ObjectHideFlags: 0
@@ -4427,6 +4432,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6f98f9190a89214b8248928d80bbbc8, type: 3}
+--- !u!1 &848534221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5713732455510231468, guid: bcfc92d57b79c9a4fb9fb7b09dc443c6, type: 3}
+  m_PrefabInstance: {fileID: 8439683271175972571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &850284516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6343841279945629597, guid: bcfc92d57b79c9a4fb9fb7b09dc443c6, type: 3}
+  m_PrefabInstance: {fileID: 8439683271175972571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &863875865
 GameObject:
   m_ObjectHideFlags: 0
@@ -10987,6 +11002,8 @@ MonoBehaviour:
   noteManager: {fileID: 1837226787}
   noteNumber: 1
   self: {fileID: 1950367629}
+  noteUI: {fileID: 399666887}
+  noteKeybindUI: {fileID: 850284516}
   interactText: {fileID: 1666264025}
   player: {fileID: 775094866}
 --- !u!1 &1950367629 stripped
@@ -12324,7 +12341,7 @@ PrefabInstance:
       objectReference: {fileID: 1662158227}
     - target: {fileID: 2560228576444957222, guid: 6b091028f4ccdce4080d62f73abc52ee, type: 3}
       propertyPath: maskIcon.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2560228576444957222, guid: 6b091028f4ccdce4080d62f73abc52ee, type: 3}
       propertyPath: 'maskIcon.Array.data[0]'
@@ -12338,6 +12355,10 @@ PrefabInstance:
       propertyPath: 'maskIcon.Array.data[2]'
       value: 
       objectReference: {fileID: 1506775196}
+    - target: {fileID: 2560228576444957222, guid: 6b091028f4ccdce4080d62f73abc52ee, type: 3}
+      propertyPath: 'maskIcon.Array.data[3]'
+      value: 
+      objectReference: {fileID: 848534221}
     - target: {fileID: 6256964571237485056, guid: 6b091028f4ccdce4080d62f73abc52ee, type: 3}
       propertyPath: m_Name
       value: Barrel
