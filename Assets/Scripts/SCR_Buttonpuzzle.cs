@@ -152,6 +152,7 @@ public class SCR_Buttonpuzzle : MonoBehaviour
         closedChest.SetActive(false);
         openChest.SetActive(true);
         exitKey.SetActive(true);
+        GetComponent<AudioSource>().Play();
     }
 
 

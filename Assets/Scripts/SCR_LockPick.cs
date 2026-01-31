@@ -24,6 +24,7 @@ public class SCR_LockPick : MonoBehaviour
             interactText.SetActive(false);
             player.cellLockpick = true;
             lockPickIcon.SetActive(true);
+            GetComponent<AudioSource>().Play();
             Destroy(parent);
         }
     }

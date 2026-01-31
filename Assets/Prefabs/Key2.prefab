@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3118515763135123614}
   - component: {fileID: 2391921601568865364}
   - component: {fileID: 198444765078175824}
-  - component: {fileID: 5556067508197401309}
   - component: {fileID: 6746418512339434530}
   m_Layer: 0
   m_Name: InteractDist
@@ -64,24 +63,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5556067508197401309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5021685111647539396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c6ad8e5a72b3547aa42a4a411c23f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  interactText: {fileID: 0}
-  player: {fileID: 0}
-  jailDoor: {fileID: 0}
-  moveTowards: {x: 0, y: 0, z: 0}
-  moveEnd: {x: 0, y: 0, z: 0}
-  moveSpeed: 0.3
 --- !u!114 &6746418512339434530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +75,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1511abcb2558b147a6e963c3ec3765d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  interactText: {fileID: 0}
+  player: {fileID: 0}
+  exitKeyIcon: {fileID: 0}
+  parent: {fileID: 0}
 --- !u!1001 &884489954814824012
 PrefabInstance:
   m_ObjectHideFlags: 0

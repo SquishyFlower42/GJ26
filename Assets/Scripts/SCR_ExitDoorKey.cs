@@ -24,6 +24,7 @@ public class SCR_ExitDoorKey : MonoBehaviour
             interactText.SetActive(false);
             player.exitKey = true;
             exitKeyIcon.SetActive(true);
+            GetComponent<AudioSource>().Play();
             Destroy(parent);
         }
     }
