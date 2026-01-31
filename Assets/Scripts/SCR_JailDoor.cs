@@ -11,6 +11,7 @@ public class SCR_JailDoor : MonoBehaviour
     public Vector3 moveTowards;
     public Vector3 moveMiddle;
     public Vector3 moveEnd;
+    public Vector3 moveStart;
     public float moveSpeed = 0.7f;
 
     public AudioSource sound;
@@ -21,6 +22,7 @@ public class SCR_JailDoor : MonoBehaviour
         interactable = true;
         inRange = false;
         moveTowards = jailDoor.transform.position;
+        moveStart = jailDoor.transform.position;
     }
 
     // Update is called once per frame
@@ -36,7 +38,7 @@ public class SCR_JailDoor : MonoBehaviour
 
         if (jailDoor != null && jailDoor.transform.position != moveTowards)
         {
-            jailDoor.transform.position = Vector3.MoveTowards(jailDoor.transform.position, moveTowards, Vector3.Distance(jailDoor.transform.position, moveTowards) * moveSpeed * Time.deltaTime);
+            jailDoor.transform.position = Vector3.MoveTowards(jailDoor.transform.position, moveTowards, Vector3.Distance(moveStart, moveTowards) * moveSpeed * Time.deltaTime);
         }
 
         if (jailDoor.transform.position.z >= moveMiddle.z - 0.05f)

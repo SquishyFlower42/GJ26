@@ -9,6 +9,7 @@ public class SCR_GuardRoomDoor : MonoBehaviour
     public Vector3 moveTowards;
     public Vector3 moveMiddle;
     public Vector3 moveEnd;
+    public Vector3 moveStart;
     public float moveSpeed = 0.3f;
     private bool interactable;
     private bool inRange;
@@ -21,6 +22,7 @@ public class SCR_GuardRoomDoor : MonoBehaviour
         interactable = true;
         inRange = false;
         moveTowards = guardDoor.transform.position;
+        moveStart = guardDoor.transform.position;
     }
 
     // Update is called once per frame
@@ -36,7 +38,7 @@ public class SCR_GuardRoomDoor : MonoBehaviour
 
         if (guardDoor.transform.position != moveTowards)
         {
-            guardDoor.transform.position = Vector3.MoveTowards(guardDoor.transform.position, moveTowards, Vector3.Distance(guardDoor.transform.position, moveTowards) * moveSpeed * Time.deltaTime);
+            guardDoor.transform.position = Vector3.MoveTowards(guardDoor.transform.position, moveTowards, Vector3.Distance(moveStart, moveTowards) * moveSpeed * Time.deltaTime);
         }
 
         if (guardDoor.transform.position.z >= moveMiddle.z - 0.05f)
