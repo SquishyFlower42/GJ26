@@ -223,6 +223,7 @@ MonoBehaviour:
   nightSky: {fileID: 2100000, guid: 493bfb50af5d9424da505ba945c86600, type: 2}
   soundSource: {fileID: 7163827357754968822}
   ticks: {fileID: 0}
+  lockOpened: 0
 --- !u!82 &7163827357754968822
 AudioSource:
   m_ObjectHideFlags: 0
@@ -501,6 +502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df11fbfb16557643b7557899a7e1ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SCR_CameraBehaviour
-  sensX: 800
-  sensY: 800
+  sensX: 400
+  sensY: 400
   orientation: {fileID: 39140634002709396}
